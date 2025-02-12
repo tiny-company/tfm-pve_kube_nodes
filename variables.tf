@@ -5,11 +5,6 @@ variable "terraform_proxmox_node_name" {
   sensitive = true
 }
 
-variable "terraform_proxmox_lxc_highest_id_value" {
-  type      = number
-  sensitive = true
-}
-
 ## kube node variables
 
 variable "kube_node_number" {
