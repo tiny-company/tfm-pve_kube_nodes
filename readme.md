@@ -32,6 +32,7 @@ module "proxmox-kube_node" {
   kube_node_ipv4_gw = var.kube_node_ipv4_gw
   kube_node_ssh_pub_keys = var.default_root_ssh_pub_keys
   kube_node_net_int_name = var.kube_node_net_int_name
+  kube_node_net_bridge_int_name = var.kube_node_net_bridge_int_name
 }
 ```
 
@@ -129,6 +130,11 @@ variable "kube_node_net_int_name" {
   sensitive = true
 }
 
+variable "kube_node_net_bridge_int_name" {
+  type      = string
+  sensitive = true
+}
+
 variable "kube_node_default_username" {
   type      = string
   default   = "root"
@@ -156,6 +162,7 @@ kube_node_ipv4_start_addr=55
 kube_node_ipv4_mask="/24"
 kube_node_ipv4_gw="192.168.1.1"
 kube_node_net_int_name="eth0"
+kube_node_net_bridge_int_name="vmbr1"
 ```
 
 ## Sources : 

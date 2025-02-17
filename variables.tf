@@ -92,7 +92,7 @@ variable "kube_node_net_int_name" {
   sensitive = true
 }
 
-variable "kube_master_net_bridge_int_name" {
+variable "kube_node_net_bridge_int_name" {
   type      = string
   sensitive = true
 }
