@@ -73,6 +73,7 @@ resource "proxmox_virtual_environment_container" "test_vigea_kube_node-test" {
   network_interface {
     name        = var.kube_node_net_int_name
     mac_address = macaddress.kube_node_net_int_mac_addr.address
+    bridge      = var.kube_master_net_bridge_int_name != null ? var.kube_master_net_bridge_int_name : ""
   }
 
   features {
