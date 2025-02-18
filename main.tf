@@ -22,6 +22,7 @@ resource "random_password" "container_root_password" {
 ## generate random mac address
 resource "macaddress" "kube_node_net_int_mac_addr" {
   ## prevent regenerate each time the job is running (only first time)
+  count = var.kube_node_number
   lifecycle {
     ignore_changes = all
   }
@@ -72,7 +73,7 @@ resource "proxmox_virtual_environment_container" "test_vigea_kube_node-test" {
   }
   network_interface {
     name        = var.kube_node_net_int_name
-    mac_address = macaddress.kube_node_net_int_mac_addr.address
+    mac_address = macaddress.kube_node_net_int_mac_addr[count.index].address
     bridge      = var.kube_node_net_bridge_int_name != null ? var.kube_node_net_bridge_int_name : ""
   }
 
