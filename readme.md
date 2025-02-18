@@ -87,7 +87,7 @@ variable "kube_node_mem_dedi" {
 
 variable "kube_node_mem_swap" {
   type      = number
-  default   = 256
+  default   = 0
 }
 
 variable "kube_node_os_templ_file" {
@@ -154,7 +154,7 @@ kube_node_cpu_cores=2
 kube_node_disk_datastore="local-lvm"
 kube_node_disk_size=10
 kube_node_mem_dedi=1024
-kube_node_mem_swap=256
+kube_node_mem_swap=0
 kube_node_os_templ_file="local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
 kube_node_os_type="debian"
 kube_node_hostname="test-kube-node-test"

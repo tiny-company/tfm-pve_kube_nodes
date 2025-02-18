@@ -49,7 +49,7 @@ variable "kube_node_mem_dedi" {
 
 variable "kube_node_mem_swap" {
   type      = number
-  default   = 256
+  default   = 0
 }
 
 variable "kube_node_os_templ_file" {
